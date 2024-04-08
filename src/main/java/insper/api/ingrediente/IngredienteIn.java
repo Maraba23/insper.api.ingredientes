@@ -7,7 +7,6 @@ import lombok.experimental.Accessors;
 @Accessors(fluent = true, chain = true)
 public record IngredienteIn (
     String name,
-    String email,
     String descricao
 ) {
     
