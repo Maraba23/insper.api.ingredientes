@@ -1,4 +1,4 @@
-package insper.store.ingrediente;
+package insper.api.ingrediente;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 
 @FeignClient(name = "ingrediente")
-public interface AccountController {
+public interface IngredienteController {
 
     @PostMapping("/ingredientes")
-    public ResponseEntity<AccountOut> create(
+    public ResponseEntity<IngredienteOut> create(
         @RequestBody(required = true) IngredienteIn in
     );
 
@@ -26,7 +26,8 @@ public interface AccountController {
     @GetMapping("/ingredientes")
     public ResponseEntity<IngredienteOut> read(
         @RequestHeader(required = true, name = "id") String id,
-        @RequestHeader(required = true, name = "name") String name
+        @RequestHeader(required = true, name = "name") String name,
+        @RequestHeader(required = true, name = "descricao") String descricao
     );
     
 }

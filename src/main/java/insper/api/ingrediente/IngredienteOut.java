@@ -1,4 +1,4 @@
-package insper.store.ingrediente;
+package insper.api.ingrediente;
 
 import lombok.Builder;
 import lombok.experimental.Accessors;
