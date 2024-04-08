@@ -23,11 +23,12 @@ public interface IngredienteController {
         @RequestBody(required = true) IngredienteIn in
     );
 
-    @GetMapping("/ingredientes")
+    @GetMapping("/ingredientes/{id}")
     public ResponseEntity<IngredienteOut> read(
-        @RequestHeader(required = true, name = "id") String id,
-        @RequestHeader(required = true, name = "name") String name,
-        @RequestHeader(required = true, name = "descricao") String descricao
+        @PathVariable(required = true) String id
     );
+
+    @GetMapping("/ingredientes")
+    public ResponseEntity<IngredienteOut> readAll();
     
 }
