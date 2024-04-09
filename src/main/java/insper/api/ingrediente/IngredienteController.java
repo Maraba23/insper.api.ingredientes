@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "ingrediente")
+@FeignClient(name = "api-ingredientes")
 public interface IngredienteController {
 
     @PostMapping("/ingredientes")
