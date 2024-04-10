@@ -1,5 +1,7 @@
 package insper.api.ingrediente;
 
+import java.util.List;
+
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,7 +31,7 @@ public interface IngredienteController {
     );
 
     @GetMapping("/ingredientes")
-    public ResponseEntity<IngredienteOut> readAll();
+    public ResponseEntity<List<IngredienteOut>> readAll();
     
     @DeleteMapping("/ingredientes/{id}")
     public ResponseEntity<IngredienteOut> delete(
