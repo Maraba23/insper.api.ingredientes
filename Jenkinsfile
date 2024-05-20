@@ -8,14 +8,6 @@ pipeline {
                 sh 'mvn clean package'
             }
         }   
-  
-        stage('Build Image') {
-            steps {
-                script {
-                    auth = docker.build("pasilva2023/ingredientes:${env.BUILD_ID}", "-f Dockerfile .")
-                }
-            }
-        }
         stage('Push Image') {
             steps {
                 script {
