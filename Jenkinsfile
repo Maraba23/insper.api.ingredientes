@@ -3,18 +3,6 @@
 pipeline {
     agent any
     stages {
-        stage('Build Account') {
-            steps {
-                build job: 'api.account', wait: true
-            }
-        }
-
-        stage('Build Auth') {
-            steps {
-                build job: 'api.auth', wait: true
-            }
-        }
-
         stage('Build') { 
             steps {
                 sh 'mvn clean package'
@@ -24,7 +12,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script {
-                    auth = docker.build("pasilva2023/auth:${env.BUILD_ID}", "-f Dockerfile .")
+                    auth = docker.build("pasilva2023/ingredientes:${env.BUILD_ID}", "-f Dockerfile .")
                 }
             }
         }
